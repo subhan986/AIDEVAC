@@ -1,0 +1,6 @@
+{
+  "name": "AI Dev Academy",
+  "description": "The premier academy for vibecoding, autonomous AI agents, and next-generation full-stack AI application development.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
