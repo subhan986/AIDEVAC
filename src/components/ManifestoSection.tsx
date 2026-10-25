@@ -1,86 +1,96 @@
 import React, { useState } from 'react';
-import { Terminal, Cpu, Zap, ShieldCheck, Sparkles } from 'lucide-react';
+import { Terminal, Cpu, Lightning, ShieldCheck, Sparkle } from '@phosphor-icons/react';
 
 export const ManifestoSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'vibecoding' | 'legacy'>('vibecoding');
 
   return (
-    <section id="manifesto" className="relative w-full py-12 sm:py-24 px-3 sm:px-6 md:px-12 bg-[#0d0d11] border-b border-neutral-900 text-neutral-200">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-6 pb-6 sm:pb-12 border-b border-neutral-800/80">
-          <div>
-            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-neutral-400">
-              01. The Paradigm Shift
+    <section id="manifesto" className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#000000] border-b border-[#181818] text-[#f3f4f6]">
+      <div className="max-w-5xl mx-auto">
+        {/* Section Header: Sentence case */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-8 sm:pb-12 border-b border-[#181818]">
+          <div className="max-w-[680px]">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#9B9B9B]">
+              01. The paradigm shift
             </span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mt-1.5 sm:mt-2">
-              From Syntax Wrestling to Vibecoding
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mt-2 [text-wrap:balance]">
+              From syntax typing to architectural orchestration
             </h2>
           </div>
-          <p className="max-w-md text-xs sm:text-sm md:text-base text-neutral-400 leading-relaxed">
-            Writing boilerplate by hand is obsolete. The defining superpower of the next decade of software engineering is orchestrating autonomous AI agent swarms from natural intent.
+          <p className="max-w-md text-sm text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+            Writing boilerplate by hand is obsolete. The defining superpower of modern engineering is steering autonomous agent swarms from natural intent.
           </p>
         </div>
 
-        {/* 3 Core Tenets */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 py-10 sm:py-14 border-b border-neutral-800/80">
-          <div className="flex flex-col gap-2.5 sm:gap-3 p-4 sm:p-0 rounded-xl bg-neutral-900/40 sm:bg-transparent border sm:border-0 border-neutral-800/60">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white">
-              <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-200" />
+        {/* 3 Core Tenets: Sentence case, no hyphens, nested radius */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 py-12 border-b border-[#181818]">
+          <div className="flex flex-col gap-3 p-4 sm:p-6 rounded-2xl bg-[#181818] border border-[#272727]">
+            <div className="w-10 h-10 rounded-xl bg-[#272727] border border-[#313131] flex items-center justify-center text-white shrink-0">
+              <Lightning size={20} weight="fill" className="text-white" />
             </div>
-            <h3 className="text-base sm:text-lg font-semibold text-white">Natural Language as Compiler</h3>
-            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
-              Vibecoding isn&apos;t sloppy guessing; it&apos;s rigorous specification-driven design. You articulate systems in plain English and steer agent swarms to generate production-grade architectures.
+            <h3 className="text-base sm:text-lg font-semibold text-white [text-wrap:balance]">
+              Natural language as compiler
+            </h3>
+            <p className="text-sm text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+              Vibecoding is specification driven engineering. You articulate system boundaries in plain English and steer agent swarms to generate production grade codebases.
             </p>
           </div>
 
-          <div className="flex flex-col gap-2.5 sm:gap-3 p-4 sm:p-0 rounded-xl bg-neutral-900/40 sm:bg-transparent border sm:border-0 border-neutral-800/60">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white">
-              <Cpu className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-200" />
+          <div className="flex flex-col gap-3 p-4 sm:p-6 rounded-2xl bg-[#181818] border border-[#272727]">
+            <div className="w-10 h-10 rounded-xl bg-[#272727] border border-[#313131] flex items-center justify-center text-white shrink-0">
+              <Cpu size={20} weight="fill" className="text-white" />
             </div>
-            <h3 className="text-base sm:text-lg font-semibold text-white">Autonomous Agent Swarms</h3>
-            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
-              Move beyond single-turn autocomplete. Learn to spin up multi-agent architectures where planner, researcher, coder, and evaluator agents collaborate autonomously.
+            <h3 className="text-base sm:text-lg font-semibold text-white [text-wrap:balance]">
+              Autonomous agent swarms
+            </h3>
+            <p className="text-sm text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+              Move beyond single prompt autocomplete. You deploy multi agent setups where planner, researcher, coder, and evaluator agents collaborate in parallel.
             </p>
           </div>
 
-          <div className="flex flex-col gap-2.5 sm:gap-3 p-4 sm:p-0 rounded-xl bg-neutral-900/40 sm:bg-transparent border sm:border-0 border-neutral-800/60">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white">
-              <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-200" />
+          <div className="flex flex-col gap-3 p-4 sm:p-6 rounded-2xl bg-[#181818] border border-[#272727]">
+            <div className="w-10 h-10 rounded-xl bg-[#272727] border border-[#313131] flex items-center justify-center text-white shrink-0">
+              <ShieldCheck size={20} weight="fill" className="text-white" />
             </div>
-            <h3 className="text-base sm:text-lg font-semibold text-white">Invariants & Self-Healing Evals</h3>
-            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
-              When models write code, your role is setting mathematical constraints, security boundary rules, and automated self-healing feedback loops that correct runtime anomalies.
+            <h3 className="text-base sm:text-lg font-semibold text-white [text-wrap:balance]">
+              Invariants and feedback loops
+            </h3>
+            <p className="text-sm text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+              When models write code, your role is establishing boundary constraints, security checks, and automated feedback loops that fix runtime errors on the fly.
             </p>
           </div>
         </div>
 
-        {/* Interactive Comparison Simulator: Legacy SWE vs Vibecoding 2026 */}
-        <div className="pt-10 sm:pt-14">
+        {/* Workflow Comparison Simulator: sentence case, no hyphens */}
+        <div className="pt-12">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
-              <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">The Workflow Contrast</h3>
-              <p className="text-[11px] sm:text-xs font-mono text-neutral-400 mt-0.5">Compare traditional hand-coded engineering with 2026 agentic vibecoding</p>
+              <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight [text-wrap:balance]">
+                The workflow contrast
+              </h3>
+              <p className="text-xs font-mono text-[#9B9B9B] mt-1">
+                Compare traditional manual engineering with agentic vibecoding
+              </p>
             </div>
-            
+
             {/* Interactive Toggle */}
-            <div className="flex items-center p-1 bg-neutral-900/60 backdrop-blur-md rounded-full border border-white/10 w-full sm:w-auto">
+            <div className="flex items-center p-1 bg-[#181818] rounded-full border border-[#272727] w-full sm:w-auto">
               <button
                 onClick={() => setActiveTab('vibecoding')}
-                className={`flex-1 sm:flex-none px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-medium rounded-full transition-all whitespace-nowrap cursor-pointer text-center ${
+                className={`flex-1 sm:flex-none px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] cursor-pointer text-center ${
                   activeTab === 'vibecoding'
-                    ? 'btn-glass-primary shadow-sm font-semibold'
-                    : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                    ? 'bg-white text-black shadow-sm'
+                    : 'text-[#9B9B9B] hover:text-white'
                 }`}
               >
                 Vibecoding 2026 (Agentic)
               </button>
               <button
                 onClick={() => setActiveTab('legacy')}
-                className={`flex-1 sm:flex-none px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-medium rounded-full transition-all whitespace-nowrap cursor-pointer text-center ${
+                className={`flex-1 sm:flex-none px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] cursor-pointer text-center ${
                   activeTab === 'legacy'
-                    ? 'btn-glass-dark text-white font-semibold'
-                    : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                    ? 'bg-[#272727] text-white shadow-sm'
+                    : 'text-[#9B9B9B] hover:text-white'
                 }`}
               >
                 Legacy 2020 (Manual)
@@ -89,101 +99,101 @@ export const ManifestoSection: React.FC = () => {
           </div>
 
           {activeTab === 'vibecoding' ? (
-            <div className="p-4 sm:p-6 md:p-8 rounded-xl bg-neutral-900/60 border border-neutral-800 backdrop-blur-sm transition-all duration-300">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-4 sm:mb-6 border-b border-neutral-800 text-xs font-mono text-neutral-400">
+            <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-[#181818] border border-[#272727] transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-6 border-b border-[#272727] text-xs font-mono text-[#9B9B9B]">
                 <span className="flex items-center gap-2 text-white">
-                  <Sparkles className="w-4 h-4 text-white" />
-                  <span>Agentic Multi-Process Pipeline</span>
+                  <Sparkle size={16} weight="fill" className="text-white" />
+                  <span>Agentic multi process pipeline</span>
                 </span>
-                <span className="text-neutral-300">Execution Velocity: 4 Hours to Production</span>
+                <span className="text-[#f3f4f6]">Execution velocity: 4 hours to production</span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-                <div className="p-3.5 sm:p-4 rounded-lg bg-black/40 border border-neutral-800/80 flex flex-col gap-1.5 sm:gap-2">
-                  <div className="text-[10px] sm:text-[11px] font-mono text-neutral-400">STEP 01</div>
-                  <div className="text-sm font-semibold text-white">Spec Intent Framing</div>
-                  <p className="text-xs text-neutral-400 leading-relaxed">
-                    Human author provides system constraints, DB schema requirements, and user stories in conversational markdown.
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="p-4 rounded-xl bg-[#1F1F1F] border border-[#272727] flex flex-col gap-2">
+                  <div className="text-xs font-mono text-[#9B9B9B]">STEP 01</div>
+                  <div className="text-sm font-semibold text-white">Specification intent framing</div>
+                  <p className="text-xs text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+                    Human author articulates system constraints, database schemas, and user stories in clear natural language.
                   </p>
                 </div>
 
-                <div className="p-3.5 sm:p-4 rounded-lg bg-black/40 border border-neutral-800/80 flex flex-col gap-1.5 sm:gap-2">
-                  <div className="text-[10px] sm:text-[11px] font-mono text-neutral-400">STEP 02</div>
-                  <div className="text-sm font-semibold text-white">Multi-Agent Swarm</div>
-                  <p className="text-xs text-neutral-400 leading-relaxed">
-                    Lead architect agent distributes tasks across database, frontend, backend API, and test synthesis agents in parallel.
+                <div className="p-4 rounded-xl bg-[#1F1F1F] border border-[#272727] flex flex-col gap-2">
+                  <div className="text-xs font-mono text-[#9B9B9B]">STEP 02</div>
+                  <div className="text-sm font-semibold text-white">Multi agent swarm</div>
+                  <p className="text-xs text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+                    Lead architect agent distributes workload across database, user interface, backend, and test synthesis agents in parallel.
                   </p>
                 </div>
 
-                <div className="p-3.5 sm:p-4 rounded-lg bg-black/40 border border-neutral-800/80 flex flex-col gap-1.5 sm:gap-2">
-                  <div className="text-[10px] sm:text-[11px] font-mono text-neutral-400">STEP 03</div>
-                  <div className="text-sm font-semibold text-white">Self-Healing Loop</div>
-                  <p className="text-xs text-neutral-400 leading-relaxed">
-                    Test harness runs automatically. Compile and runtime errors are fed back into agent context for immediate self-correction.
+                <div className="p-4 rounded-xl bg-[#1F1F1F] border border-[#272727] flex flex-col gap-2">
+                  <div className="text-xs font-mono text-[#9B9B9B]">STEP 03</div>
+                  <div className="text-sm font-semibold text-white">Automated correction loop</div>
+                  <p className="text-xs text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+                    Test harnesses run continuously. Compile errors and runtime anomalies are routed directly back to agent context for instant repair.
                   </p>
                 </div>
 
-                <div className="p-3.5 sm:p-4 rounded-lg bg-black/40 border border-neutral-800/80 flex flex-col gap-1.5 sm:gap-2">
-                  <div className="text-[10px] sm:text-[11px] font-mono text-neutral-400">STEP 04</div>
-                  <div className="text-sm font-semibold text-white">Zero-Friction Ship</div>
-                  <p className="text-xs text-neutral-400 leading-relaxed">
-                    Full application containerizes, passes security invariants, and deploys to serverless edge in under 120 seconds.
+                <div className="p-4 rounded-xl bg-[#1F1F1F] border border-[#272727] flex flex-col gap-2">
+                  <div className="text-xs font-mono text-[#9B9B9B]">STEP 04</div>
+                  <div className="text-sm font-semibold text-white">Frictionless deployment</div>
+                  <p className="text-xs text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+                    Full application containerizes, validates security invariants, and deploys to production servers in 120 seconds.
                   </p>
                 </div>
               </div>
 
-              <div className="mt-4 sm:mt-6 p-3 sm:p-4 rounded-lg bg-neutral-950 border border-neutral-800 font-mono text-[11px] sm:text-xs text-neutral-300 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div className="mt-6 p-4 rounded-xl bg-[#000000] border border-[#272727] font-mono text-xs text-[#f3f4f6] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <span>Outcome: High architectural leverage, 10x shipping velocity, zero syntax friction.</span>
-                <span className="text-neutral-400">Taught in Tracks 01 & 02</span>
+                <span className="text-[#9B9B9B]">Taught in Tracks 01 and 02</span>
               </div>
             </div>
           ) : (
-            <div className="p-4 sm:p-6 md:p-8 rounded-xl bg-neutral-900/40 border border-neutral-800/60 transition-all duration-300 opacity-90">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-4 sm:mb-6 border-b border-neutral-800 text-xs font-mono text-neutral-400">
-                <span className="flex items-center gap-2 text-neutral-300">
-                  <Terminal className="w-4 h-4 text-neutral-400" />
-                  <span>Manual Keystroke Pipeline</span>
+            <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-[#181818] border border-[#272727] transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-6 border-b border-[#272727] text-xs font-mono text-[#9B9B9B]">
+                <span className="flex items-center gap-2 text-[#9B9B9B]">
+                  <Terminal size={16} weight="regular" />
+                  <span>Manual typing pipeline</span>
                 </span>
-                <span className="text-neutral-400">Execution Velocity: 4 Weeks per Sprint</span>
+                <span className="text-[#9B9B9B]">Execution velocity: 4 weeks per sprint</span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-                <div className="p-3.5 sm:p-4 rounded-lg bg-black/20 border border-neutral-800/50 flex flex-col gap-1.5 sm:gap-2">
-                  <div className="text-[10px] sm:text-[11px] font-mono text-neutral-500">STEP 01</div>
-                  <div className="text-sm font-semibold text-neutral-300">Boilerplate Setup</div>
-                  <p className="text-xs text-neutral-500 leading-relaxed">
-                    2 days configuring build tools, package managers, linter configs, tsconfigs, and repetitive starter templates.
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="p-4 rounded-xl bg-[#1F1F1F] border border-[#272727] flex flex-col gap-2 opacity-80">
+                  <div className="text-xs font-mono text-[#9B9B9B]">STEP 01</div>
+                  <div className="text-sm font-semibold text-[#f3f4f6]">Boilerplate setup</div>
+                  <p className="text-xs text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+                    Days spent wrestling build tools, package managers, linter configs, tsconfigs, and repetitive starter templates.
                   </p>
                 </div>
 
-                <div className="p-3.5 sm:p-4 rounded-lg bg-black/20 border border-neutral-800/50 flex flex-col gap-1.5 sm:gap-2">
-                  <div className="text-[10px] sm:text-[11px] font-mono text-neutral-500">STEP 02</div>
-                  <div className="text-sm font-semibold text-neutral-300">Manual Keystroking</div>
-                  <p className="text-xs text-neutral-500 leading-relaxed">
-                    Typing thousands of lines of boilerplate CRUD endpoints, schema mappings, and repetitive form state handlers.
+                <div className="p-4 rounded-xl bg-[#1F1F1F] border border-[#272727] flex flex-col gap-2 opacity-80">
+                  <div className="text-xs font-mono text-[#9B9B9B]">STEP 02</div>
+                  <div className="text-sm font-semibold text-[#f3f4f6]">Manual keystroking</div>
+                  <p className="text-xs text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+                    Typing thousands of lines of repetitive endpoints, object mappings, and form state handlers.
                   </p>
                 </div>
 
-                <div className="p-3.5 sm:p-4 rounded-lg bg-black/20 border border-neutral-800/50 flex flex-col gap-1.5 sm:gap-2">
-                  <div className="text-[10px] sm:text-[11px] font-mono text-neutral-500">STEP 03</div>
-                  <div className="text-sm font-semibold text-neutral-300">Manual Debugging</div>
-                  <p className="text-xs text-neutral-500 leading-relaxed">
-                    Hours spent reading StackOverflow, fixing subtle typing errors, and chasing asynchronous race conditions.
+                <div className="p-4 rounded-xl bg-[#1F1F1F] border border-[#272727] flex flex-col gap-2 opacity-80">
+                  <div className="text-xs font-mono text-[#9B9B9B]">STEP 03</div>
+                  <div className="text-sm font-semibold text-[#f3f4f6]">Manual debugging</div>
+                  <p className="text-xs text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+                    Hours spent reading forum threads, fixing subtle type mismatches, and hunting asynchronous race conditions.
                   </p>
                 </div>
 
-                <div className="p-3.5 sm:p-4 rounded-lg bg-black/20 border border-neutral-800/50 flex flex-col gap-1.5 sm:gap-2">
-                  <div className="text-[10px] sm:text-[11px] font-mono text-neutral-500">STEP 04</div>
-                  <div className="text-sm font-semibold text-neutral-300">Stalled Deployments</div>
-                  <p className="text-xs text-neutral-500 leading-relaxed">
-                    Long pull request review queues, manual staging tests, and slow iteration cycles draining engineering morale.
+                <div className="p-4 rounded-xl bg-[#1F1F1F] border border-[#272727] flex flex-col gap-2 opacity-80">
+                  <div className="text-xs font-mono text-[#9B9B9B]">STEP 04</div>
+                  <div className="text-sm font-semibold text-[#f3f4f6]">Stalled deployments</div>
+                  <p className="text-xs text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+                    Long code review queues, manual staging tests, and slow iteration cycles draining engineering momentum.
                   </p>
                 </div>
               </div>
 
-              <div className="mt-4 sm:mt-6 p-3 sm:p-4 rounded-lg bg-neutral-950/70 border border-neutral-800/50 font-mono text-[11px] sm:text-xs text-neutral-400 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <span>The old way: High cognitive overhead spent on plumbing rather than product value.</span>
-                <span className="text-neutral-500">Legacy Paradigm</span>
+              <div className="mt-6 p-4 rounded-xl bg-[#000000] border border-[#272727] font-mono text-xs text-[#9B9B9B] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span>The old way: High cognitive overhead spent on repetitive plumbing rather than product value.</span>
+                <span className="text-[#9B9B9B]">Legacy paradigm</span>
               </div>
             </div>
           )}

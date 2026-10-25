@@ -30,31 +30,39 @@ export default function PillNav({
 }: PillNavProps) {
   const [currentHref, setCurrentHref] = useState(activeHref);
 
-  // Sync active href based on current scroll position across sections
+  // Sync active href based on current scroll position across sections using requestAnimationFrame
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 180;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY + 180;
 
-      // Check if at the very top
-      if (window.scrollY < 200) {
-        setCurrentHref(items[0]?.href || '#hero');
-        return;
-      }
+          if (window.scrollY < 180) {
+            setCurrentHref(items[0]?.href || '#hero');
+            ticking = false;
+            return;
+          }
 
-      // Check sections from bottom to top
-      for (let i = items.length - 1; i >= 0; i--) {
-        const item = items[i];
-        if (item.href.startsWith('#')) {
-          const el = document.querySelector(item.href);
-          if (el) {
-            const rect = el.getBoundingClientRect();
-            const top = rect.top + window.scrollY;
-            if (scrollPosition >= top) {
-              setCurrentHref(item.href);
-              return;
+          for (let i = items.length - 1; i >= 0; i--) {
+            const item = items[i];
+            if (item.href.startsWith('#')) {
+              const el = document.querySelector(item.href);
+              if (el) {
+                const rect = el.getBoundingClientRect();
+                const top = rect.top + window.scrollY;
+                if (scrollPosition >= top) {
+                  setCurrentHref(item.href);
+                  ticking = false;
+                  return;
+                }
+              }
             }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
@@ -81,17 +89,17 @@ export default function PillNav({
 
   return (
     <nav
-      className={`w-full flex justify-center z-40 transition-all duration-300 ${className}`}
+      className={`w-full flex justify-center z-40 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${className}`}
       aria-label="Main Navigation"
     >
-      {/* Compact dock perfectly tailored for mobile and desktop */}
-      <div className="w-fit max-w-[96vw] overflow-x-auto no-scrollbar touch-manipulation flex items-center gap-0.5 sm:gap-1.5 p-1 sm:p-1.5 bg-neutral-900/90 backdrop-blur-2xl border border-white/10 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.15)]">
+      {/* Fluid island nav matching B7 */}
+      <div className="w-fit max-w-[96vw] overflow-x-auto no-scrollbar touch-manipulation flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-[#181818]/90 backdrop-blur-2xl border border-[#272727] rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.8)]">
         {/* Logo Button - Scrolls to Top / Home */}
         <a
           href="#hero"
           onClick={(e) => handleClick(e, '#hero')}
           aria-label={logoAlt}
-          className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/[0.08] hover:bg-white/[0.16] border border-white/20 hover:border-white/40 p-1.5 sm:p-2 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(255,255,255,0.12)] transition-all cursor-pointer group hover:scale-105 active:scale-95"
+          className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#272727] hover:bg-[#313131] border border-[#313131] p-1.5 sm:p-2 flex items-center justify-center shrink-0 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] cursor-pointer group hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-white"
         >
           <img
             src={logo}
@@ -101,7 +109,7 @@ export default function PillNav({
         </a>
 
         {/* Subtle vertical separator */}
-        <div className="w-[1px] h-3 sm:h-3.5 bg-white/15 mx-0.5 shrink-0" />
+        <div className="w-[1px] h-3.5 bg-[#272727] mx-0.5 shrink-0" />
 
         {/* Navigation Buttons for each section */}
         <div className="flex items-center gap-0.5 sm:gap-1 shrink-0">
@@ -109,7 +117,7 @@ export default function PillNav({
             const isActive = currentHref === item.href;
 
             let itemClass =
-              'relative px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[11px] sm:text-xs font-medium transition-all duration-200 cursor-pointer flex items-center gap-1 sm:gap-1.5 select-none whitespace-nowrap touch-manipulation active:scale-95 ';
+              'relative px-3 sm:px-3.5 py-1 sm:py-1.5 text-xs font-semibold transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] cursor-pointer flex items-center gap-1.5 select-none whitespace-nowrap touch-manipulation active:scale-95 focus-visible:ring-2 focus-visible:ring-white ';
 
             if (itemStyle === 'pill') {
               itemClass += 'rounded-full ';
@@ -118,19 +126,9 @@ export default function PillNav({
             }
 
             if (isActive) {
-              if (hoverEffect === 'fill') {
-                itemClass += 'bg-white text-black font-semibold shadow-[0_2px_10px_rgba(255,255,255,0.25)] ';
-              } else {
-                itemClass += 'bg-white/10 text-white font-medium ';
-              }
+              itemClass += 'bg-white text-black shadow-sm ';
             } else {
-              if (hoverEffect === 'fill') {
-                itemClass += 'text-neutral-300 hover:text-white hover:bg-white/10 ';
-              } else if (hoverEffect === 'glow') {
-                itemClass += 'text-neutral-300 hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.2)] ';
-              } else {
-                itemClass += 'text-neutral-300 hover:text-white ';
-              }
+              itemClass += 'text-[#9B9B9B] hover:text-white hover:bg-[#272727] ';
             }
 
             return (
@@ -142,11 +140,7 @@ export default function PillNav({
               >
                 <span>{item.label}</span>
                 {indicator === 'dot' && isActive && (
-                  <span
-                    className={`w-1.5 h-1.5 rounded-full transition-all shrink-0 ${
-                      hoverEffect === 'fill' ? 'bg-black' : 'bg-emerald-400 shadow-[0_0_6px_#34d399]'
-                    }`}
-                  />
+                  <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0" />
                 )}
               </a>
             );

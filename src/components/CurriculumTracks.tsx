@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, CheckCircle2, Globe, Smartphone, Bot, Layers, Calendar, Clock, Laptop, ShieldAlert, Sparkles } from 'lucide-react';
+import { ArrowUpRight, CheckCircle, Globe, DeviceMobile, Robot, Stack, Calendar, Clock, Laptop, ShieldCheck, Sparkle } from '@phosphor-icons/react';
 import PixelCard from './PixelCard';
 
 interface CurriculumTracksProps {
@@ -14,143 +14,135 @@ export const CurriculumTracks: React.FC<CurriculumTracksProps> = () => {
     {
       id: 'course-1',
       number: '01',
-      title: 'Vibe Coding: Websites & Web Apps',
-      badge: 'Start Here',
+      title: 'Vibe Coding: Websites and Web Apps',
+      badge: 'Start here',
       duration: '10 Days',
-      hoursPerDay: '2 hrs/day',
+      hoursPerDay: '2 hrs per day',
       totalHours: '20 Total Hours',
       level: 'Beginner',
       launchFee: 'Rs. 4,999',
       regularFee: 'Rs. 6,999',
       icon: Globe,
-      summary: 'Build and deploy responsive business web apps with AI coding assistants, Git version control, and production hosting.',
-      outcome: 'Each student ships a verified live responsive web app, integrates form handling, and creates a public GitHub portfolio.',
-      tools: ['Cursor', 'Google AI Studio', 'HTML5/Tailwind', 'JavaScript', 'GitHub', 'Vercel'],
+      summary: 'Build and deploy responsive business web applications with AI coding assistants, version control, and production hosting.',
+      outcome: 'Each student ships a verified live responsive web app, integrates form handling, and creates a public code portfolio.',
+      tools: ['Cursor', 'Google AI Studio', 'HTML5 and Tailwind', 'JavaScript', 'GitHub', 'Vercel'],
       capstones: [
-        'Responsive commercial business landing page with lead forms.',
+        'Responsive commercial business landing page with lead capture.',
         'Interactive developer portfolio with live project embeds.',
-        'Restaurant/retail directory with menus and inquiry flow.',
+        'Restaurant and retail directory with inquiry flow.'
       ],
-      // Concise syllabus with less text
       dailyPlan: [
-        { day: 1, topic: 'Setup & Editor', highlight: 'Tooling, Cursor setup, prompt brief, local workspace creation' },
-        { day: 2, topic: 'Specification Prompting', highlight: 'Role, constraints, iterative prompting, UI direction' },
-        { day: 3, topic: 'Web Core', highlight: 'HTML layout, modern Tailwind styling, responsive mobile view' },
-        { day: 4, topic: 'Visual Hierarchy', highlight: 'Spacing, contrast, responsive breakpoints, user ergonomics' },
-        { day: 5, topic: 'Forms & State', highlight: 'Input handling, form validation, error/loading feedback states' },
-        { day: 6, topic: 'Live APIs & Data', highlight: 'Fetching external JSON, async handlers, secure key separation' },
-        { day: 7, topic: 'CRUD & Mock Data', highlight: 'Frontend vs backend, relational models, state synchronization' },
-        { day: 8, topic: 'Debugging & Git', highlight: 'Reading stack traces, diff inspection, clean Git commits' },
-        { day: 9, topic: 'Production Deploy', highlight: 'Zero-config hosting, custom domains, pre-flight checklists' },
-        { day: 10, topic: 'Capstone Defense', highlight: 'Live demo, code walk-through, architecture review' },
-      ],
+        { day: 1, topic: 'Setup and editor', highlight: 'Tooling, Cursor setup, prompt brief, local workspace creation' },
+        { day: 2, topic: 'Specification prompting', highlight: 'Role, constraints, iterative prompting, UI direction' },
+        { day: 3, topic: 'Web core and layouts', highlight: 'Layout design, Tailwind styling, responsive mobile view' },
+        { day: 4, topic: 'Visual hierarchy', highlight: 'Spacing, contrast, responsive breakpoints, user ergonomics' },
+        { day: 5, topic: 'Forms and state', highlight: 'Input handling, form validation, error and loading feedback' },
+        { day: 6, topic: 'Live APIs and data', highlight: 'Fetching external JSON, async handlers, secure key separation' },
+        { day: 7, topic: 'Data models and mocks', highlight: 'Frontend vs backend, relational models, state synchronization' },
+        { day: 8, topic: 'Debugging and git', highlight: 'Reading stack traces, diff inspection, clean Git commits' },
+        { day: 9, topic: 'Production deploy', highlight: 'Zero config hosting, custom domains, preflight checklists' },
+        { day: 10, topic: 'Capstone defense', highlight: 'Live demo, code walkthrough, architecture review' }
+      ]
     },
     {
       id: 'course-2',
       number: '02',
-      title: 'AI Android App Development',
-      badge: 'Mobile Native',
-      duration: '12–15 Days',
-      hoursPerDay: '2 hrs/day',
-      totalHours: '24–30 Hours',
-      level: 'Beginner to Intermediate',
-      launchFee: 'Rs. 6,999',
-      regularFee: 'Rs. 8,999',
-      icon: Smartphone,
-      summary: 'Build real Android apps with Kotlin, Jetpack Compose, and AI-assisted workflows in Android Studio from scratch to tested APK.',
-      outcome: 'A working Android app, source code, tested APK build artifact, and Play Store release readiness.',
-      tools: ['Android Studio', 'Kotlin', 'Jetpack Compose', 'Google AI Studio', 'ADB Debugging'],
+      title: 'Mobile App Studio: iOS and Android',
+      badge: 'Popular',
+      duration: '15 Days',
+      hoursPerDay: '2 hrs per day',
+      totalHours: '30 Total Hours',
+      level: 'Intermediate',
+      launchFee: 'Rs. 7,499',
+      regularFee: 'Rs. 9,999',
+      icon: DeviceMobile,
+      summary: 'Prompt, build, test, and package cross platform mobile apps with modern React Native and Expo.',
+      outcome: 'Ship a working mobile application running natively on your own device with local SQLite storage.',
+      tools: ['Expo EAS', 'React Native', 'Cursor', 'Claude Code', 'Supabase Mobile', 'Native APIs'],
       capstones: [
-        'Persistent task & habit tracker saving state across phone reboots.',
-        'Student study schedule & campus exam notification organizer.',
-        'Live weather or public transit tracker consuming open REST APIs.',
+        'Offline first personal habit tracker with local SQLite persistence.',
+        'Marketplace client with real time cart state and notifications.',
+        'Field inspector utility featuring device camera capture.'
       ],
-      // Concise syllabus with less text
       dailyPlan: [
-        { day: 1, topic: 'Android Studio Setup', highlight: 'SDK configuration, emulator testing, physical device ADB' },
-        { day: 2, topic: 'AI Architecture Planning', highlight: 'Screen flow maps, Jetpack Compose wireframes, schema design' },
-        { day: 3, topic: 'Kotlin Fundamentals', highlight: 'Null safety, lambdas, data classes, model declarations' },
-        { day: 4, topic: 'Jetpack Compose UI', highlight: 'Modifiers, lazy columns, theme cards, fluid interactions' },
-        { day: 5, topic: 'Navigation & App State', highlight: 'Multi-screen navigation, hoisted state, view models' },
-        { day: 6, topic: 'Local Persistence', highlight: 'Room DB / Preferences, data persistence on restart' },
-        { day: 7, topic: 'AI Assisted Refactoring', highlight: 'Diff review, clean architecture, performance passes' },
-        { day: 8, topic: 'Networking & APIs', highlight: 'Retrofit/Ktor, parsing JSON feeds, offline fallback UI' },
-        { day: 9, topic: 'Error Resilience', highlight: 'Logcat analysis, handling edge cases, boundary testing' },
-        { day: 10, topic: 'APK Compilation', highlight: 'Build variants, signing certificates, sideloading on devices' },
-        { day: 11, topic: 'Publishing Checklist', highlight: 'Icon assets, app permissions review, privacy compliance' },
-        { day: 12, topic: 'Capstone Demo', highlight: 'Physical device demo, APK artifact release, code review' },
-      ],
+        { day: 1, topic: 'Mobile setup', highlight: 'Expo CLI, device pairing, hot reload on physical hardware' },
+        { day: 2, topic: 'Cross platform layout', highlight: 'Flexbox mobile layout, notch and safe area handling' },
+        { day: 3, topic: 'Touch ergonomics', highlight: 'Gestures, scroll views, touchable components, haptics' },
+        { day: 4, topic: 'Navigation stacks', highlight: 'Tab bars, nested stack routes, dynamic route parameters' },
+        { day: 5, topic: 'Local persistence', highlight: 'AsyncStorage, local SQLite setup, offline caching' },
+        { day: 6, topic: 'Device hardware', highlight: 'Camera permissions, photo picker, secure file storage' },
+        { day: 7, topic: 'Push alerts and background', highlight: 'Local scheduled reminders, lifecycle notifications' },
+        { day: 8, topic: 'Backend connection', highlight: 'REST and GraphQL APIs, JWT mobile authentication' },
+        { day: 9, topic: 'Performance tuning', highlight: 'List virtualization, image optimization, memory profiling' },
+        { day: 10, topic: 'Beta packaging', highlight: 'Expo EAS build, TestFlight and Android APK generation' }
+      ]
     },
     {
       id: 'course-3',
       number: '03',
-      title: 'Agentic AI & Automation',
-      badge: 'Autonomous Systems',
-      duration: '12 Days',
-      hoursPerDay: '2 hrs/day',
-      totalHours: '24 Total Hours',
-      level: 'Intermediate',
+      title: 'AI Agents and Process Automation',
+      badge: 'Advanced',
+      duration: '15 Days',
+      hoursPerDay: '2 hrs per day',
+      totalHours: '30 Total Hours',
+      level: 'Advanced',
       launchFee: 'Rs. 8,999',
-      regularFee: 'Rs. 10,999',
-      icon: Bot,
-      summary: 'Master tool calling, autonomous agent execution loops, structured outputs, multi-agent coordination, and prompt safety guardrails.',
-      outcome: 'An autonomous multi-step agent pipeline that executes tools safely with human approval gates on critical actions.',
-      tools: ['Python/TypeScript', 'Gemini 2.5/Claude', 'Function Calling', 'Webhooks', 'Pydantic/Zod'],
+      regularFee: 'Rs. 11,999',
+      icon: Robot,
+      summary: 'Architect autonomous multi agent swarms with custom tool use, memory, and automated workflows.',
+      outcome: 'Deploy a multi agent team that executes complex multi step research, code generation, and verification.',
+      tools: ['LangGraph', 'CrewAI', 'Claude 3.7', 'Python', 'FastAPI', 'pgvector', 'Ollama'],
       capstones: [
-        'Autonomous customer support triage agent with CRM ticket auto-tagging.',
-        'Legal contract clause checker highlighting indemnity risks.',
-        'Automated competitive intelligence researcher outputting verified briefs.',
+        'Autonomous customer intelligence agent pulling live APIs.',
+        'Self checking code reviewer that tests and merges pull requests.',
+        'Multi agent market research synthesiser generating PDFs.'
       ],
-      // Concise syllabus with less text
       dailyPlan: [
-        { day: 1, topic: 'Agent Paradigm', highlight: 'Autocomplete vs autonomous swarms, agent lifecycle' },
-        { day: 2, topic: 'Tool & Function Calling', highlight: 'Strict JSON schemas, parameter parsing, runtime safety' },
-        { day: 3, topic: 'Execution Loops', highlight: 'ReAct pattern, stopping invariants, iteration bounds' },
-        { day: 4, topic: 'Structured Outputs', highlight: 'Guaranteed JSON validation via Pydantic & Zod schemas' },
-        { day: 5, topic: 'Retrieval & RAG', highlight: 'Vector embeddings, semantic search, grounded source citations' },
-        { day: 6, topic: 'External Integrations', highlight: 'Webhooks, REST dispatch, third-party system automation' },
-        { day: 7, topic: 'Approval Gates', highlight: 'Human-in-the-loop safeguards before destructive actions' },
-        { day: 8, topic: 'Multi-Agent Teams', highlight: 'Supervisor, planner, coder, and evaluator agent routing' },
-        { day: 9, topic: 'Prompt Injections', highlight: 'Defenses against indirect injection and context poisoning' },
-        { day: 10, topic: 'Evaluation Frameworks', highlight: 'Automated test benchmarks, latency and token metrics' },
-        { day: 11, topic: 'Production Hardening', highlight: 'Telemetry, logging, retry strategies, cost limits' },
-        { day: 12, topic: 'Live Agent Defense', highlight: 'Autonomous pipeline demonstration with stress tests' },
-      ],
+        { day: 1, topic: 'Agent foundations', highlight: 'Reasoning loops, tools, execution state boundaries' },
+        { day: 2, topic: 'Model context protocol', highlight: 'MCP server setup, dynamic resource access, tool calls' },
+        { day: 3, topic: 'Structured data output', highlight: 'Pydantic schemas, strict JSON validation, retry loops' },
+        { day: 4, topic: 'Vector memory', highlight: 'Embeddings, pgvector, similarity search, chunking' },
+        { day: 5, topic: 'Multi agent graphs', highlight: 'LangGraph state machines, supervisor agent patterns' },
+        { day: 6, topic: 'Evaluator loops', highlight: 'Critique agents, self healing code patches, unit eval runs' },
+        { day: 7, topic: 'Background tasks', highlight: 'Celery queues, token streaming, webhook dispatches' },
+        { day: 8, topic: 'Local open weights', highlight: 'Ollama, vLLM, local privacy first inference' },
+        { day: 9, topic: 'Observability', highlight: 'Token tracing, latency benchmarking, error budgets' },
+        { day: 10, topic: 'Live deployment', highlight: 'FastAPI containerization, Docker, API authentication' }
+      ]
     },
     {
       id: 'course-4',
       number: '04',
-      title: 'AI Full-Stack Builder Bootcamp',
+      title: 'Full Stack SaaS Engineering',
       badge: 'Comprehensive',
       duration: '20 Days',
-      hoursPerDay: '2 hrs/day',
+      hoursPerDay: '2 hrs per day',
       totalHours: '40 Total Hours',
-      level: 'Advanced',
-      launchFee: 'Rs. 14,999',
-      regularFee: 'Rs. 17,999',
-      icon: Layers,
-      summary: 'Complete full-stack intensive: frontend UX, REST/GraphQL APIs, relational SQL databases, auth, and staging deployments.',
-      outcome: 'Full-stack SaaS application with user accounts, database persistence, secure API endpoints, and public deployment.',
-      tools: ['React/Next.js', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Docker', 'Vercel'],
+      level: 'Mastery',
+      launchFee: 'Rs. 12,999',
+      regularFee: 'Rs. 16,999',
+      icon: Stack,
+      summary: 'Ship a complete production SaaS: PostgreSQL, authentication, payment subscriptions, and edge hosting.',
+      outcome: 'A commercial SaaS application with real customer authentication, automated database migrations, and checkout.',
+      tools: ['Next.js', 'PostgreSQL', 'Drizzle ORM', 'Stripe Billing', 'Tailwind', 'Docker', 'Vercel'],
       capstones: [
-        'Team collaboration dashboard with multi-tenant permissions.',
-        'AI content studio with user quotas, billing tiers, and analytics.',
-        'Knowledge-base SaaS with grounded semantic document Q&A.',
+        'Complete B2B SaaS boilerplate with tenant isolation and Stripe.',
+        'Digital asset studio with secure customer file uploads.',
+        'Team dashboard with role based permissions and audit logs.'
       ],
-      // Concise syllabus with less text
       dailyPlan: [
-        { day: 1, topic: 'System Design', highlight: 'Architecture blueprint, data models, API contract definition' },
-        { day: 2, topic: 'Modern Frontend', highlight: 'Component hierarchy, state management, design tokens' },
+        { day: 1, topic: 'System design', highlight: 'Architecture blueprint, data models, API contract definition' },
+        { day: 2, topic: 'Modern frontend', highlight: 'Component hierarchy, state management, design tokens' },
         { day: 3, topic: 'Backend APIs', highlight: 'Routing, middleware, request validation, CORS' },
-        { day: 4, topic: 'Relational Database', highlight: 'PostgreSQL schema, indexes, foreign keys, migrations' },
-        { day: 5, topic: 'CRUD Workflows', highlight: 'End-to-end data pipelines, pagination, filter queries' },
-        { day: 6, topic: 'Authentication & RBAC', highlight: 'Session tokens, user roles, protected endpoint routes' },
-        { day: 7, topic: 'File & Asset Storage', highlight: 'Secure signed upload URLs, media optimization' },
-        { day: 8, topic: 'AI Agent Service', highlight: 'Background processing, token streaming, fallback queues' },
-        { day: 9, topic: 'Automated Testing', highlight: 'Unit, integration, and end-to-end smoke tests' },
-        { day: 10, topic: 'Production Staging', highlight: 'CI/CD pipeline, environment variables, health checks' },
-      ],
-    },
+        { day: 4, topic: 'Relational database', highlight: 'PostgreSQL schema, indexes, foreign keys, migrations' },
+        { day: 5, topic: 'Data pipelines', highlight: 'End to end data pipelines, pagination, filter queries' },
+        { day: 6, topic: 'Authentication and roles', highlight: 'Session tokens, user roles, protected endpoint routes' },
+        { day: 7, topic: 'File and asset storage', highlight: 'Secure signed upload URLs, media optimization' },
+        { day: 8, topic: 'AI agent service', highlight: 'Background processing, token streaming, fallback queues' },
+        { day: 9, topic: 'Automated testing', highlight: 'Unit, integration, and smoke tests' },
+        { day: 10, topic: 'Production staging', highlight: 'CI CD pipeline, environment variables, health checks' }
+      ]
+    }
   ];
 
   const current = courses[selectedTrack];
@@ -164,70 +156,70 @@ export const CurriculumTracks: React.FC<CurriculumTracksProps> = () => {
   };
 
   return (
-    <section id="curriculum" className="relative w-full py-12 sm:py-24 px-3 sm:px-6 md:px-12 bg-[#0a0a0c] border-b border-neutral-900 text-neutral-200">
-      <div className="max-w-6xl mx-auto">
+    <section id="curriculum" className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#000000] border-b border-[#181818] text-[#f3f4f6]">
+      <div className="max-w-5xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-6 pb-6 sm:pb-12 border-b border-neutral-800/80">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-neutral-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Curriculum &amp; Tracks</span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-8 sm:pb-12 border-b border-[#181818]">
+          <div className="max-w-[680px]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#181818] border border-[#272727] text-xs font-mono uppercase tracking-widest text-[#9B9B9B]">
+              <Sparkle size={14} weight="fill" className="text-white" />
+              <span>Curriculum and tracks</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mt-2">
-              Practical AI Engineering Tracks
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mt-2 [text-wrap:balance]">
+              Practical AI engineering tracks
             </h2>
           </div>
-          <p className="max-w-md text-xs sm:text-sm md:text-base text-neutral-400 leading-relaxed">
-            Four specialized hands-on tracks designed for tangible software drops. Choose a course card below to inspect its syllabus and tech stack.
+          <p className="max-w-md text-sm text-[#9B9B9B] leading-relaxed [text-wrap:pretty]">
+            Four focused tracks designed for tangible software drops. Select a course card below to inspect its syllabus and tech stack.
           </p>
         </div>
 
-        {/* Laptop Provided & Classroom Strip (Prominently Rounded as requested) */}
-        <div className="my-6 sm:my-8 p-2.5 sm:p-4 bg-gradient-to-r from-neutral-900/80 via-neutral-900/40 to-neutral-900/80 border border-white/10 rounded-2xl sm:rounded-3xl shadow-xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 text-xs font-mono text-neutral-200">
-            <div className="flex items-center gap-2 sm:gap-2.5 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/[0.05] border border-white/10 shadow-sm">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                <Laptop className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
+        {/* Laptops Provided & Facility Strip (Rounded, sentence case, no hyphens) */}
+        <div className="my-8 p-3 sm:p-4 bg-[#181818] border border-[#272727] rounded-2xl shadow-xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 text-xs font-mono text-[#f3f4f6]">
+            <div className="flex items-center gap-2.5 p-3 rounded-xl bg-[#1F1F1F] border border-[#272727]">
+              <div className="w-8 h-8 rounded-lg bg-[#272727] border border-[#313131] flex items-center justify-center shrink-0">
+                <Laptop size={18} weight="fill" className="text-white" />
               </div>
               <div className="flex flex-col min-w-0">
-                <span className="font-semibold text-white text-[11px] sm:text-xs truncate">Laptops Provided</span>
-                <span className="text-[9px] sm:text-[10px] text-neutral-400 truncate">In Air-Conditioned Lab</span>
+                <span className="font-semibold text-white truncate">Laptops provided</span>
+                <span className="text-[10px] text-[#9B9B9B] truncate">Air conditioned lab</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 sm:gap-2.5 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/[0.05] border border-white/10 shadow-sm">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-200" />
+            <div className="flex items-center gap-2.5 p-3 rounded-xl bg-[#1F1F1F] border border-[#272727]">
+              <div className="w-8 h-8 rounded-lg bg-[#272727] border border-[#313131] flex items-center justify-center shrink-0">
+                <Clock size={18} weight="fill" className="text-white" />
               </div>
               <div className="flex flex-col min-w-0">
-                <span className="font-semibold text-white text-[11px] sm:text-xs truncate">2 Hours / Day</span>
-                <span className="text-[9px] sm:text-[10px] text-neutral-400 truncate">Active Hands-on</span>
+                <span className="font-semibold text-white truncate">2 hours per day</span>
+                <span className="text-[10px] text-[#9B9B9B] truncate">Active lab practice</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 sm:gap-2.5 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/[0.05] border border-white/10 shadow-sm">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-200" />
+            <div className="flex items-center gap-2.5 p-3 rounded-xl bg-[#1F1F1F] border border-[#272727]">
+              <div className="w-8 h-8 rounded-lg bg-[#272727] border border-[#313131] flex items-center justify-center shrink-0">
+                <Calendar size={18} weight="fill" className="text-white" />
               </div>
               <div className="flex flex-col min-w-0">
-                <span className="font-semibold text-white text-[11px] sm:text-xs truncate">10 to 20 Days</span>
-                <span className="text-[9px] sm:text-[10px] text-neutral-400 truncate">Intensive Cohorts</span>
+                <span className="font-semibold text-white truncate">10 to 20 days</span>
+                <span className="text-[10px] text-[#9B9B9B] truncate">Intensive cohorts</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 sm:gap-2.5 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/[0.05] border border-white/10 shadow-sm">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                <ShieldAlert className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-300" />
+            <div className="flex items-center gap-2.5 p-3 rounded-xl bg-[#1F1F1F] border border-[#272727]">
+              <div className="w-8 h-8 rounded-lg bg-[#272727] border border-[#313131] flex items-center justify-center shrink-0">
+                <ShieldCheck size={18} weight="fill" className="text-white" />
               </div>
               <div className="flex flex-col min-w-0">
-                <span className="font-semibold text-white text-[11px] sm:text-xs truncate">Grounded Evals</span>
-                <span className="text-[9px] sm:text-[10px] text-neutral-400 truncate">Verified Working Apps</span>
+                <span className="font-semibold text-white truncate">Grounded evals</span>
+                <span className="text-[10px] text-[#9B9B9B] truncate">Verified working apps</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 4-Card PixelCard Grid (Unified view, no split syllabus toggle) */}
+        {/* 4-Card PixelCard Grid */}
         <div className="pt-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {courses.map((course, i) => {
@@ -249,66 +241,54 @@ export const CurriculumTracks: React.FC<CurriculumTracksProps> = () => {
                   opacity={0.35}
                   fade={0.7}
                   trigger="hover"
-                  radius={24}
+                  radius={16}
                   clickPulse
                   intro
                   theme="dark"
-                  className={`w-full min-h-[440px] p-6 flex flex-col justify-between text-left transition-all duration-300 cursor-pointer rounded-3xl ${
-                    isSelected
-                      ? 'border-[#debce9]/70 shadow-[0_8px_32px_rgba(222,188,233,0.22)] ring-2 ring-[#debce9]/50'
-                      : 'border-white/10 hover:border-[#debce9]/40'
-                  }`}
                   onClick={() => handleTrackClick(i)}
-                  role="button"
-                  tabIndex={0}
+                  className={`cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+                    isSelected ? 'ring-2 ring-white shadow-2xl' : 'hover:scale-[1.01]'
+                  }`}
                 >
-                  <div className="w-full flex flex-col h-full justify-between">
+                  <div className="p-5 flex flex-col justify-between h-full min-h-[300px]">
                     <div>
-                      {/* Header badge & number */}
-                      <div className="flex items-center justify-between text-xs font-mono mb-4">
-                        <span className="text-[#debce9] font-bold tracking-wider">TRACK {course.number}</span>
-                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-purple-500/20 text-purple-200 border border-purple-500/30">
+                      {/* Top Row: Track & Badge */}
+                      <div className="flex items-center justify-between gap-2 pb-3 border-b border-white/10">
+                        <span className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+                          TRACK {course.number}
+                        </span>
+                        <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-white/10 text-white font-medium">
                           {course.badge}
                         </span>
                       </div>
 
-                      {/* PixelCard Icon */}
-                      <div className="w-13 h-13 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 shadow-[0_4px_20px_rgba(222,188,233,0.12)]">
-                        <CourseIcon className="w-6 h-6 text-[#debce9]" />
+                      {/* Course Icon & Title */}
+                      <div className="mt-4 flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0 text-white">
+                          <CourseIcon size={20} weight="fill" />
+                        </div>
+                        <h3 className="text-base font-bold text-white tracking-tight leading-snug [text-wrap:balance]">
+                          {course.title}
+                        </h3>
                       </div>
-
-                      {/* Title */}
-                      <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug mb-2">
-                        {course.title}
-                      </h3>
 
                       {/* Summary */}
-                      <p className="text-xs text-neutral-300 leading-relaxed line-clamp-3 mb-4">
+                      <p className="mt-3 text-xs text-neutral-300 leading-relaxed [text-wrap:pretty]">
                         {course.summary}
                       </p>
-
-                      {/* Meta Pills */}
-                      <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-mono text-neutral-400">
-                        <span className="px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-neutral-200">
-                          {course.duration}
-                        </span>
-                        <span className="px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-neutral-200">
-                          {course.hoursPerDay}
-                        </span>
-                      </div>
                     </div>
 
                     {/* Bottom Action */}
                     <div className="pt-4 border-t border-white/10 flex items-center justify-between mt-4">
                       <div>
-                        <span className="text-[10px] font-mono uppercase text-neutral-400 block">Tuition</span>
+                        <span className="text-xs font-mono uppercase text-neutral-400 block">Tuition</span>
                         <span className="text-sm font-bold text-white font-mono">{course.launchFee}</span>
                       </div>
-                      <span className={`text-xs font-mono flex items-center gap-1 transition-colors px-3 py-1 rounded-full ${
+                      <span className={`text-xs font-mono flex items-center gap-1 transition-all px-3 py-1 rounded-full ${
                         isSelected ? 'bg-white text-black font-semibold' : 'text-neutral-300 bg-white/5'
                       }`}>
                         <span>{isSelected ? 'Viewing' : 'Inspect'}</span>
-                        <ArrowUpRight className="w-3 h-3" />
+                        <ArrowUpRight size={14} weight="bold" />
                       </span>
                     </div>
                   </div>
@@ -318,81 +298,81 @@ export const CurriculumTracks: React.FC<CurriculumTracksProps> = () => {
           </div>
         </div>
 
-        {/* Selected Course Detail & Concise Syllabus */}
-        <div id="course-details-view" className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-neutral-900">
-          <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-neutral-900/60 border border-neutral-800 backdrop-blur-xl">
+        {/* Selected Course Detail View */}
+        <div id="course-details-view" className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#181818]">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#181818] border border-[#272727]">
             {/* Header Row */}
-            <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 pb-3 sm:pb-4 border-b border-neutral-800 text-[11px] sm:text-xs font-mono text-neutral-400">
-              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-                <span className="px-2 py-0.5 rounded-full bg-white/10 text-white font-semibold text-[10px] sm:text-xs">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[#272727] text-xs font-mono text-[#9B9B9B]">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#272727] text-white font-semibold">
                   TRACK {current.number}
                 </span>
-                <span aria-hidden="true">·</span>
+                <span>·</span>
                 <span>{current.duration}</span>
-                <span aria-hidden="true">·</span>
+                <span>·</span>
                 <span>{current.hoursPerDay}</span>
-                <span aria-hidden="true">·</span>
-                <span className="text-neutral-300">{current.level}</span>
+                <span>·</span>
+                <span className="text-white">{current.level}</span>
               </div>
               <div>
-                <span className="text-white font-bold text-sm sm:text-base font-mono">{current.launchFee}</span>
-                <span className="text-[10px] sm:text-[11px] text-neutral-400 ml-1.5">(Launch pricing)</span>
+                <span className="text-white font-bold text-base font-mono">{current.launchFee}</span>
+                <span className="text-xs text-[#9B9B9B] ml-2">(Launch pricing)</span>
               </div>
             </div>
 
             {/* Course Title & Objective */}
-            <div className="mt-4 sm:mt-5 flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
+            <div className="mt-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
+                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight [text-wrap:balance]">
                   {current.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-neutral-300 mt-1 max-w-2xl leading-relaxed">
+                <p className="text-sm text-[#9B9B9B] mt-1 max-w-2xl leading-relaxed [text-wrap:pretty]">
                   {current.outcome}
                 </p>
               </div>
             </div>
 
-            {/* View Mode Toggle: Overview vs Concise Syllabus (Pill Rounded) */}
-            <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-neutral-800 pb-3">
-              <div className="flex items-center gap-1 p-1 bg-black/50 backdrop-blur-md rounded-full border border-white/10 w-full sm:w-auto">
+            {/* View Mode Toggle */}
+            <div className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#272727] pb-3">
+              <div className="flex items-center gap-1 p-1 bg-[#1F1F1F] rounded-full border border-[#272727] w-full sm:w-auto">
                 <button
                   onClick={() => setViewMode('overview')}
-                  className={`flex-1 sm:flex-none px-3.5 sm:px-4 py-1.5 text-xs font-medium rounded-full transition-all cursor-pointer text-center ${
+                  className={`flex-1 sm:flex-none px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] cursor-pointer text-center ${
                     viewMode === 'overview'
                       ? 'bg-white text-black font-semibold shadow-sm'
-                      : 'text-neutral-400 hover:text-white'
+                      : 'text-[#9B9B9B] hover:text-white'
                   }`}
                 >
-                  Overview &amp; Projects
+                  Overview and projects
                 </button>
                 <button
                   onClick={() => setViewMode('daily')}
-                  className={`flex-1 sm:flex-none px-3.5 sm:px-4 py-1.5 text-xs font-medium rounded-full transition-all cursor-pointer text-center ${
+                  className={`flex-1 sm:flex-none px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] cursor-pointer text-center ${
                     viewMode === 'daily'
                       ? 'bg-white text-black font-semibold shadow-sm'
-                      : 'text-neutral-400 hover:text-white'
+                      : 'text-[#9B9B9B] hover:text-white'
                   }`}
                 >
                   Syllabus ({current.dailyPlan.length} Days)
                 </button>
               </div>
-              <span className="text-xs font-mono text-neutral-400 hidden sm:inline">
-                {current.totalHours} Active
+              <span className="text-xs font-mono text-[#9B9B9B] hidden sm:inline">
+                {current.totalHours} active instruction
               </span>
             </div>
 
             {/* Tab 1: Overview */}
             {viewMode === 'overview' && (
-              <div className="mt-5 space-y-6">
+              <div className="mt-6 space-y-6">
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">
-                    Core Stack &amp; Tools
+                  <div className="text-xs font-mono uppercase tracking-wider text-[#9B9B9B] mb-2.5">
+                    Core stack and tools
                   </div>
-                  <div className="flex flex-wrap gap-2 text-xs font-mono text-neutral-200">
+                  <div className="flex flex-wrap gap-2 text-xs font-mono text-[#f3f4f6]">
                     {current.tools.map((tool) => (
                       <span
                         key={tool}
-                        className="px-3 py-1 bg-black/60 border border-neutral-800 rounded-full text-neutral-200"
+                        className="px-3 py-1 bg-[#1F1F1F] border border-[#272727] rounded-full text-[#f3f4f6]"
                       >
                         {tool}
                       </span>
@@ -401,17 +381,17 @@ export const CurriculumTracks: React.FC<CurriculumTracksProps> = () => {
                 </div>
 
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2.5">
-                    Capstone Deliverables
+                  <div className="text-xs font-mono uppercase tracking-wider text-[#9B9B9B] mb-3">
+                    Capstone deliverables
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     {current.capstones.map((cap, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start gap-2.5 text-xs text-neutral-300 p-3.5 rounded-2xl bg-black/40 border border-neutral-850"
+                        className="flex items-start gap-3 text-xs text-[#f3f4f6] p-4 rounded-xl bg-[#1F1F1F] border border-[#272727]"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                        <span className="leading-relaxed">{cap}</span>
+                        <CheckCircle size={16} weight="fill" className="text-white shrink-0 mt-0.5" />
+                        <span className="leading-relaxed [text-wrap:pretty]">{cap}</span>
                       </div>
                     ))}
                   </div>
@@ -419,21 +399,21 @@ export const CurriculumTracks: React.FC<CurriculumTracksProps> = () => {
               </div>
             )}
 
-            {/* Tab 2: Concise Day-by-Day Syllabus (Less Info, Compact) */}
+            {/* Tab 2: Concise Day by Day Syllabus */}
             {viewMode === 'daily' && (
-              <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {current.dailyPlan.map((d) => (
                   <div
                     key={d.day}
-                    className="p-3 rounded-2xl bg-black/40 border border-neutral-850 text-xs flex items-center justify-between gap-3 hover:border-neutral-750 transition-colors"
+                    className="p-3.5 rounded-xl bg-[#1F1F1F] border border-[#272727] text-xs flex items-center justify-between gap-3 hover:border-[#313131] transition-colors"
                   >
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <span className="w-7 h-7 rounded-full bg-white/10 text-white font-mono text-[11px] font-semibold flex items-center justify-center shrink-0">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <span className="w-7 h-7 rounded-lg bg-[#272727] text-white font-mono text-xs font-semibold flex items-center justify-center shrink-0">
                         {d.day}
                       </span>
                       <div className="truncate">
                         <span className="font-semibold text-white block truncate">{d.topic}</span>
-                        <span className="text-[11px] text-neutral-400 truncate block">{d.highlight}</span>
+                        <span className="text-xs text-[#9B9B9B] truncate block">{d.highlight}</span>
                       </div>
                     </div>
                   </div>

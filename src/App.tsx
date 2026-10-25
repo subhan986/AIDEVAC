@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { HeroSection } from './components/HeroSection';
 import { ManifestoSection } from './components/ManifestoSection';
+import { TaglineReveal } from './components/TaglineReveal';
+import { BenefitsSection } from './components/BenefitsSection';
 import { CurriculumTracks } from './components/CurriculumTracks';
 import { GraduateShowcase } from './components/GraduateShowcase';
 import { FaqSection } from './components/FaqSection';
@@ -10,41 +12,49 @@ import LogoLoader from './components/LogoLoader';
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
-  const handleExploreClick = () => {
-    const el = document.getElementById('manifesto');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-neutral-100 flex flex-col font-sans selection:bg-neutral-800 selection:text-white">
-      {/* 0. Clean Loading Animation with ONLY the logo and NO text */}
+    <div className="min-h-screen bg-[#000000] text-[#f3f4f6] flex flex-col font-sans selection:bg-[#272727] selection:text-white">
+      {/* Skip to content link for keyboard accessibility (B10) */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-full focus:font-semibold focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
+
+      {/* Loading animation with only logo and no text */}
       {isLoading && (
         <LogoLoader
-          duration={1200}
+          duration={1100}
           onLoaded={() => setIsLoading(false)}
         />
       )}
 
-      {/* 1. Hero Section with Compact PillNav Dock (Logo + Buttons) and AcidSquares */}
-      <HeroSection
-        onExploreClick={handleExploreClick}
-      />
+      {/* Hero Section with Fluid Island Dock and AcidSquares */}
+      <HeroSection />
 
-      {/* 2. Manifesto: What is Vibecoding & The Paradigm Shift */}
-      <ManifestoSection />
+      {/* Main content semantic container (B10) */}
+      <main id="main-content" className="flex-1 w-full flex flex-col">
+        {/* 1. Problem to solution: Manifesto and the paradigm shift */}
+        <ManifestoSection />
 
-      {/* 3. Practical Curriculum Tracks (PixelCard Course Cards, Rounded Laptops Strip, Concise Syllabus) */}
-      <CurriculumTracks />
+        {/* 2. Mandatory Tagline reveal section (B11) */}
+        <TaglineReveal />
 
-      {/* 4. Shipped by Alumni (Compact & Minimal Info) */}
-      <GraduateShowcase />
+        {/* 3. Outcomes and Benefits (A2 step 7 & 8) */}
+        <BenefitsSection />
 
-      {/* 5. Frequently Asked Questions & Standards */}
-      <FaqSection />
+        {/* 4. Practical Curriculum Tracks (A2 core offer) */}
+        <CurriculumTracks />
 
-      {/* 6. Modern Minimalist Footer (Bigger Logo, Rounded Buttons) */}
+        {/* 5. Social proof: Alumni drops (A2 step 9) */}
+        <GraduateShowcase />
+
+        {/* 6. Frequently asked questions, objection handling & Risk reversal (A2 step 10 & 11) */}
+        <FaqSection />
+      </main>
+
+      {/* 7. Footer with legal links (B10) */}
       <Footer />
     </div>
   );
